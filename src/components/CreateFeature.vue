@@ -1,4 +1,3 @@
-<!-- v-bind:value="option.value" -->
 <template>
   <div class='ui basic content center aligned segment'>
     <button class='ui basic button blue icon' v-on:click="openForm" v-show="!isCreating">
@@ -17,47 +16,39 @@
             <br>
             <span>Risk Selected: <strong>{{ policy.type }}</strong></span>
           </div>
-
           <div class='field' v-show="policy.type && policy.type.length > 1">
             <label for="">Customer Name</label>
             <input v-model="policy.name" type="text" name="customer" placeholder="Bill Murray" required>
             </div>
-
           <div class='field' v-show="policy.type && policy.type.length > 1">
             <label v-show="policy.type == 'Automobile'" >Make / Model</label>
             <label v-show="policy.type == 'Home'">Address</label>
             <label v-show="policy.type == 'Life'">Policy Holder</label>
             <label v-show="policy.type == 'Prize'">Company Name</label>
             <input v-model="policy.policyType" type="text" name="customer" required>
+          </div>
+          <div class='field' v-show="policy.type && policy.type.length > 1">
+            <label for="">Item Value</label>
+            <input v-model="policy.amount" type="number" name="value" placeholder="$5000" required>
             </div>
-
-            <div class='field' v-show="policy.type && policy.type.length > 1">
-              <label for="">Item Value</label>
-              <input v-model="policy.amount" type="number" name="value" placeholder="$5000" required>
-              </div>
-
-            <div class='field' v-show="policy.type && policy.type.length > 1">
-              <label for="">Effective date</label>
-              <input v-model="policy.expires" type="date" name="date" v-on:change="addFeature()" required>
-              </div>
-
-              <div class="field" >
-                <button class='ui basic blue button' v-show="policy.type" v-on:click="addFeature()" >
-                  Add Features
-                  <i class='plus icon blue'></i>
-                </button>
-              </div>
-
-              <feature  v-for="feature in policy.features" key="feature.id" :feature.sync="feature"></feature>
-
-            <div class='ui two button buttons'>
+          <div class='field' v-show="policy.type && policy.type.length > 1">
+            <label for="">Effective date</label>
+            <input v-model="policy.expires" type="date" name="date" v-on:change="addFeature()" required>
+            </div>
+          <div class="field" >
+            <button class='ui basic blue button' v-show="policy.type" v-on:click="addFeature()" >
+              Add Features
+              <i class='plus icon blue'></i>
+            </button>
+          </div>
+          <feature  v-for="feature in policy.features" key="feature.id" :feature.sync="feature"></feature>
+          <div class='ui two button buttons'>
             <button class='ui basic green button' v-on:click="sendForm()" >
-              <i class='check icon green'></i>
-            </button>
-
-            <button class='ui basic red button' v-on:click="closeForm">
-              <i class='x icon red'></i>
-            </button>
+            <i class='check icon green'></i>
+          </button>
+          <button class='ui basic red button' v-on:click="closeForm">
+            <i class='x icon red'></i>
+          </button>
           </div>
         </div>
       </div>
@@ -81,14 +72,6 @@ export default {
       isCreating: false,
       selected: '',
       options: [],
-      //   {
-      //     text: 'Automobile',
-      //     value: 'Automobile',
-      //   },
-      //   { text: 'Home', value: 'Home' },
-      //   { text: 'Life', value: 'Life' },
-      //   { text: 'Prize', value: 'Prize' },
-      // ],
     };
   },
   mounted() {
@@ -115,16 +98,6 @@ export default {
         console.log(data);
       });
     },
-    // apiPost() {
-    //   this.$http
-    //     .post('https://bright-core.herokuapp.com/api/policy', this.policy)
-    //     .then(res => {
-    //       // console.log('policy results', res.body);
-    //     })
-    //     .catch(err => {
-    //       // console.error('Post Failed', err);
-    //     });
-    // },
     sendForm() {
       if (this.policy.name && this.policy.policyType && this.policy.amount && this.policy.expires) {
         this.closeForm();

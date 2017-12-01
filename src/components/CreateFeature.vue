@@ -92,7 +92,7 @@ export default {
       this.policy.features.push({ name: '', value: '' });
     },
     apiCall() {
-      this.$http.get('https://bright-core.herokuapp.com/api/policy').then(res => {
+      this.$http.get(process.env.API_URL).then(res => {
         const data = res.data.objects.map(el => ({ text: el.policy_type, value: el.policy_type }));
         this.options = data;
         console.log(data);

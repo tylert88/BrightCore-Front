@@ -1,6 +1,6 @@
 # bright-core
 
-![](brightCore/src/assets/brightCore.gif) <br> <br>
+![](/src/assets/brightCore.gif) <br> <br>
 
 > A Vue.js project
 

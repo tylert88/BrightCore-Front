@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <img class="ui basic segment" :src="require('./assets/bc.png')" alt="Brite Core Logo" />
     <div class='ui three column centered grid'>
       <div class='column'>
         <create-feature v-on:create-feature="createFeature"></create-feature>

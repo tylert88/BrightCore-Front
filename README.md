@@ -1,4 +1,4 @@
-# bright-core
+[Demo here!](https://britecoreproject.firebaseapp.com/)
 
 ![](/src/assets/briteCore.gif) <br> <br> ![](/src/assets/erd.png)
 

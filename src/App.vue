@@ -4,7 +4,7 @@
     <div class='ui three column centered grid'>
       <div class='column'>
         <create-feature v-on:create-feature="createFeature"></create-feature>
-        <bright-core v-bind:features="features"></bright-core>
+        <brite-core v-bind:features="features"></brite-core>
       </div>
     </div>
   </div>
@@ -12,13 +12,13 @@
 
 <script type="text/javascript">
 import sweetalert from 'sweetalert';
-import BrightCore from './components/brightCore';
+import BriteCore from './components/BriteCore';
 import CreateFeature from './components/CreateFeature';
 
 export default {
   name: 'app',
   components: {
-    BrightCore,
+    BriteCore,
     CreateFeature,
   },
   data() {

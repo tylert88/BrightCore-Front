@@ -1,4 +1,4 @@
-View and test the [Demo here!](https://britecoreproject.firebaseapp.com/)
+## View and test the [Demo here!](https://britecoreproject.firebaseapp.com/)
 
 ![](/src/assets/briteCore.gif) <br> <br> ![](/src/assets/erd.png)
 
